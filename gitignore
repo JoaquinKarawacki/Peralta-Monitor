@@ -1,0 +1,17 @@
+# ── Excel fuente — solo en tu computadora, nunca al repo ──
+*.xlsx
+*.xls
+
+# ── Scripts de parseo — solo locales ──
+parsers/
+
+# ── Python ──
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+
+# ── Sistema operativo ──
+.DS_Store
+Thumbs.db
