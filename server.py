@@ -8,6 +8,7 @@ Servidor Flask que:
 """
 
 import os
+import shutil
 import subprocess
 import sys
 from datetime import datetime
@@ -35,6 +36,22 @@ CLIENT_PASS  = os.environ.get('CLIENT_PASS',  'cliente123')
 # Ruta raíz del proyecto (donde vive server.py)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
+SEED_DIR = os.path.join(BASE_DIR, 'data_seed')
+
+def init_data():
+    """
+    Si el Volume está vacío (primer arranque), copia los JSON semilla
+    para que el dashboard no quede en blanco.
+    """
+    os.makedirs(DATA_DIR, exist_ok=True)
+    seed_files = ['estado_actual.json', 'warnings.json', 'historico_rodamientos.json']
+    for fname in seed_files:
+        dest = os.path.join(DATA_DIR, fname)
+        seed = os.path.join(SEED_DIR, fname)
+        if not os.path.exists(dest) and os.path.exists(seed):
+            shutil.copy2(seed, dest)
+
+init_data()
 
 # ── Decoradores de autenticación ───────────────────────────────────────────────
 

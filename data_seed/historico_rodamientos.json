@@ -1,0 +1,1140 @@
+{
+  "PSP-01": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 36,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-04-23",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-02": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 28,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-05-13",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-03": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 29,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-04-29",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-04": {
+    "cambio_frontal": "2019-10-21",
+    "cambio_trasero": "2024-08-11",
+    "parada_retrofit_dias": 35,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-02-19",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "ND",
+        "cat_tras": "ND"
+      },
+      {
+        "fecha": "2026-02-04",
+        "tipo": "Mantenimiento Master",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-05": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 1058,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-04-16",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-06": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 43,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-04-29",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-07": {
+    "cambio_frontal": "2020-11-23",
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 21,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Clase C; sin vibración ni ruido."
+    },
+    "medidas": [
+      {
+        "fecha": "2025-06-19",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-08": {
+    "cambio_frontal": "2025-03-18",
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 1409,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Clase B; sin vibración ni ruido."
+    },
+    "medidas": [
+      {
+        "fecha": "2025-01-22",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "C",
+        "cat_tras": "B"
+      },
+      {
+        "fecha": "2026-01-28",
+        "tipo": "Mantenimiento Master",
+        "cat_del": "A",
+        "cat_tras": "B"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-09": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 29,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Clase B sin vibración ni ruido."
+    },
+    "medidas": [
+      {
+        "fecha": "2025-01-09",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "ND",
+        "cat_tras": "ND"
+      },
+      {
+        "fecha": "2026-01-15",
+        "tipo": "Mantenimiento Master",
+        "cat_del": "A",
+        "cat_tras": "B"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-10": {
+    "cambio_frontal": "2023-11-26",
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 24,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Clase B; sin vibración ni ruido."
+    },
+    "medidas": [
+      {
+        "fecha": "2025-03-12",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "B",
+        "cat_tras": "B"
+      },
+      {
+        "fecha": "2026-02-26",
+        "tipo": "Mantenimiento Master",
+        "cat_del": "A",
+        "cat_tras": "B"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-11": {
+    "cambio_frontal": "2023-03-06",
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 27,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Clase C; sin vibración ni ruido."
+    },
+    "medidas": [
+      {
+        "fecha": "2025-04-09",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-03-17",
+        "tipo": "Mantenimiento Master",
+        "cat_del": "A",
+        "cat_tras": "D"
+      }
+    ],
+    "comentarios": "Enercon calificar situación y plan de acción si aplica.",
+    "plan_accion_enercon": null
+  },
+  "PSP-12": {
+    "cambio_frontal": "2020-07-13",
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 247,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Estaba en clase F, Reclasificada para Clase C; sin vibración ni ruido."
+    },
+    "medidas": [
+      {
+        "fecha": "2025-07-03",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "C"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-13": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 33,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-06-27",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-14": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 238,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-05-06",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "B"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-15": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 22,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-04-14",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-16": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 22,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-01-30",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "ND",
+        "cat_tras": "ND"
+      },
+      {
+        "fecha": "2026-02-05",
+        "tipo": "Mantenimiento Master",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-17": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 1210,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-01-28",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "ND",
+        "cat_tras": "ND"
+      },
+      {
+        "fecha": "2026-02-04",
+        "tipo": "Mantenimiento Master",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-18": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 45,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-05-21",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-19": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 27,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-01-20",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "ND",
+        "cat_tras": "ND"
+      },
+      {
+        "fecha": "2026-01-22",
+        "tipo": "Mantenimiento Master",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-20": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 1210,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-01-15",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "ND",
+        "cat_tras": "ND"
+      },
+      {
+        "fecha": "2026-01-19",
+        "tipo": "Mantenimiento Master",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-21": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 26,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-03-28",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-03-06",
+        "tipo": "Mantenimiento Master",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-22": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 24,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-03-25",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-03-05",
+        "tipo": "Mantenimiento Master",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-23": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 42,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-05-19",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-24": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 24,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-06-10",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-25": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 48,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-06-04",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-26": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 42,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-11-11",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-27": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 44,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-10-31",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-28": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 29,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-09-10",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-03-10",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": null,
+        "cat_tras": null
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-29": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 17,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-08-06",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-01-27",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": null,
+        "cat_tras": null
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-30": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 29,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-10-13",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "B"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-31": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 35,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-07-09",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-01-08",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": null,
+        "cat_tras": null
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-32": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 38,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-09-29",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-03-10",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": null,
+        "cat_tras": null
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-33": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 25,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-08-27",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-03-04",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": null,
+        "cat_tras": null
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-34": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 28,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-11-17",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-35": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 28,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-07-22",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-01-15",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": null,
+        "cat_tras": null
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-36": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 32,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-07-24",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-01-20",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": null,
+        "cat_tras": null
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-37": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 29,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Inspección realizada el 05.sep.2025, Clase A en rodamientos delantero y trasero."
+    },
+    "medidas": [
+      {
+        "fecha": "2025-07-30",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-01-23",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": null,
+        "cat_tras": null
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-38": {
+    "cambio_frontal": null,
+    "cambio_trasero": "2025-07-09",
+    "parada_retrofit_dias": 24,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-11-21",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-39": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 33,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-07-25",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-01-23",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": null,
+        "cat_tras": null
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-40": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 22,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-11-03",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-41": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 22,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-08-08",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-03-06",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": null,
+        "cat_tras": null
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-42": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 21,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-12-17",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "B"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-43": {
+    "cambio_frontal": "2020-05-19",
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 26,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Sin vibración ni ruido – será incluida en el proceso de update"
+    },
+    "medidas": [
+      {
+        "fecha": "2025-10-21",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "D"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-44": {
+    "cambio_frontal": "2019-10-26",
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 18,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Clase C; sin vibración ni ruido."
+    },
+    "medidas": [
+      {
+        "fecha": "2025-12-02",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "C"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-45": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 31,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Clase B; sin vibración ni ruido."
+    },
+    "medidas": [
+      {
+        "fecha": "2025-12-08",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "B"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-46": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 34,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Inspección realizada el 05.sep.2025, Clase A en rodamientos delantero y trasero."
+    },
+    "medidas": [
+      {
+        "fecha": "2025-11-27",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-47": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 25,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-12-05",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-48": {
+    "cambio_frontal": null,
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 35,
+    "insp_joao": {
+      "realizada": false,
+      "fecha": null,
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-11-21",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-49": {
+    "cambio_frontal": "2023-08-11",
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 29,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": "Sin vibración ni ruido – será incluida en el proceso de update."
+    },
+    "medidas": [
+      {
+        "fecha": "2025-07-14",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "D"
+      },
+      {
+        "fecha": "2026-01-09",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": "A",
+        "cat_tras": "D"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  },
+  "PSP-50": {
+    "cambio_frontal": "2021-10-12",
+    "cambio_trasero": null,
+    "parada_retrofit_dias": 48,
+    "insp_joao": {
+      "realizada": true,
+      "fecha": "2025-10-01",
+      "comentario": null
+    },
+    "medidas": [
+      {
+        "fecha": "2025-07-29",
+        "tipo": "Mant. Master 2025",
+        "cat_del": "A",
+        "cat_tras": "A"
+      },
+      {
+        "fecha": "2026-01-21",
+        "tipo": "Mantenimiento Graxa",
+        "cat_del": "A",
+        "cat_tras": "C"
+      }
+    ],
+    "comentarios": null,
+    "plan_accion_enercon": null
+  }
+}
