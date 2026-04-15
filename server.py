@@ -9,6 +9,7 @@ Servidor Flask que:
 
 import os
 import subprocess
+import sys
 from datetime import datetime
 from functools import wraps
 
@@ -127,7 +128,7 @@ def upload():
         monitoreo_file.save(dest)
 
         result = subprocess.run(
-            ['python', os.path.join(BASE_DIR, 'parsers', 'parse_actualizacion.py')],
+            [sys.executable, os.path.join(BASE_DIR, 'parsers', 'parse_actualizacion.py')],
             capture_output=True, text=True
         )
         if result.returncode == 0:
@@ -142,7 +143,7 @@ def upload():
         logbook_file.save(dest)
 
         result = subprocess.run(
-            ['python', os.path.join(BASE_DIR, 'parsers', 'parse_logbook.py')],
+            [sys.executable, os.path.join(BASE_DIR, 'parsers', 'parse_logbook.py')],
             capture_output=True, text=True
         )
         if result.returncode == 0:
