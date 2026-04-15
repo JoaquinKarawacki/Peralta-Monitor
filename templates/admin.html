@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peralta — Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #07101a;
+      color: #c8d8e8;
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container { max-width: 520px; margin: 0 auto; }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 36px;
+    }
+
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo span { font-size: 15px; font-weight: 600; color: #e0eaf4; }
+
+    .nav-links { display: flex; gap: 16px; align-items: center; }
+    .nav-links a {
+      font-size: 13px;
+      color: #7a9ab8;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: #4da6ff; }
+
+    h1 { font-size: 20px; font-weight: 600; color: #e0eaf4; margin-bottom: 6px; }
+    .subtitle { font-size: 13px; color: #7a9ab8; margin-bottom: 32px; }
+
+    .card {
+      background: #0d1e2e;
+      border: 1px solid #1a3050;
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    .field-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #7a9ab8;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 8px;
+    }
+
+    .file-input-wrapper {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .file-display {
+      background: #07101a;
+      border: 1px dashed #1a3050;
+      border-radius: 6px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: border-color .2s;
+    }
+
+    .file-display:hover { border-color: #4da6ff; }
+
+    .file-display input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .file-icon { color: #4da6ff; font-size: 18px; }
+    .file-name { font-family: 'DM Mono', monospace; font-size: 13px; color: #7a9ab8; }
+    .file-name.selected { color: #e0eaf4; }
+
+    button[type="submit"] {
+      width: 100%;
+      background: #4da6ff;
+      color: #07101a;
+      border: none;
+      border-radius: 6px;
+      padding: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    button[type="submit"]:hover { background: #6db8ff; }
+    button[type="submit"]:disabled { background: #1a3050; color: #3d5f80; cursor: not-allowed; }
+
+    .last-update {
+      font-size: 12px;
+      color: #3d5f80;
+      text-align: center;
+      margin-top: 12px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* Resultado del upload */
+    #resultado {
+      display: none;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 16px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    #resultado.ok {
+      background: #3dffa022;
+      border: 1px solid #3dffa055;
+      color: #3dffa0;
+    }
+
+    #resultado.error {
+      background: #ff4d4d22;
+      border: 1px solid #ff4d4d55;
+      color: #ff4d4d;
+    }
+
+    .spinner {
+      display: none;
+      text-align: center;
+      color: #7a9ab8;
+      font-size: 13px;
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <svg width="20" height="20" viewBox="0 0 18 18" fill="none">
+          <line x1="9" y1="9" x2="9"    y2="2"    stroke="#4da6ff" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="9" y1="9" x2="15.5" y2="13"   stroke="#4da6ff" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="9" y1="9" x2="2.5"  y2="13"   stroke="#4da6ff" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="2" fill="#4da6ff"/>
+          <circle cx="9" cy="9" r="1" fill="#07101a"/>
+        </svg>
+        <span>Peralta I &mdash; Admin</span>
+      </div>
+      <div class="nav-links">
+        <a href="/">Ver dashboard</a>
+        <a href="/logout">Cerrar sesión</a>
+      </div>
+    </div>
+
+    <h1>Actualizar datos</h1>
+    <p class="subtitle">Subí los archivos Excel para actualizar el dashboard. El nombre del archivo no importa.</p>
+
+    <div class="card">
+      <form id="upload-form">
+
+        <div class="field-label">Peralta I — Actualización Rodamientos</div>
+        <div class="file-input-wrapper">
+          <div class="file-display" id="display-monitoreo">
+            <span class="file-icon">📄</span>
+            <span class="file-name" id="name-monitoreo">Seleccionar archivo...</span>
+            <input type="file" name="monitoreo" accept=".xlsx" id="input-monitoreo" />
+          </div>
+        </div>
+
+        <div class="field-label">Logbook ROTORsoft</div>
+        <div class="file-input-wrapper">
+          <div class="file-display" id="display-logbook">
+            <span class="file-icon">📄</span>
+            <span class="file-name" id="name-logbook">Seleccionar archivo...</span>
+            <input type="file" name="logbook" accept=".xlsx" id="input-logbook" />
+          </div>
+        </div>
+
+        <button type="submit" id="btn-subir">Subir y actualizar</button>
+      </form>
+
+      <div class="spinner" id="spinner">Procesando archivos...</div>
+
+      <div id="resultado"></div>
+
+      {% if last_update %}
+      <p class="last-update">Último update: {{ last_update }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    // Mostrar nombre del archivo seleccionado
+    document.getElementById('input-monitoreo').addEventListener('change', function() {
+      const label = document.getElementById('name-monitoreo');
+      label.textContent = this.files[0] ? this.files[0].name : 'Seleccionar archivo...';
+      label.classList.toggle('selected', !!this.files[0]);
+    });
+
+    document.getElementById('input-logbook').addEventListener('change', function() {
+      const label = document.getElementById('name-logbook');
+      label.textContent = this.files[0] ? this.files[0].name : 'Seleccionar archivo...';
+      label.classList.toggle('selected', !!this.files[0]);
+    });
+
+    // Submit del formulario
+    document.getElementById('upload-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const monitoreo = document.getElementById('input-monitoreo').files[0];
+      const logbook   = document.getElementById('input-logbook').files[0];
+
+      if (!monitoreo && !logbook) {
+        mostrarResultado('Seleccioná al menos un archivo antes de subir.', false);
+        return;
+      }
+
+      const btn = document.getElementById('btn-subir');
+      const spinner = document.getElementById('spinner');
+      btn.disabled = true;
+      spinner.style.display = 'block';
+      document.getElementById('resultado').style.display = 'none';
+
+      const formData = new FormData();
+      if (monitoreo) formData.append('monitoreo', monitoreo);
+      if (logbook)   formData.append('logbook', logbook);
+
+      try {
+        const res  = await fetch('/upload', { method: 'POST', body: formData });
+        const data = await res.json();
+
+        if (data.success) {
+          mostrarResultado('✓ Datos actualizados: ' + data.updated.join(', '), true);
+        } else {
+          mostrarResultado('Error:\n' + data.errors.join('\n'), false);
+        }
+      } catch (err) {
+        mostrarResultado('Error de conexión: ' + err.message, false);
+      } finally {
+        btn.disabled = false;
+        spinner.style.display = 'none';
+      }
+    });
+
+    function mostrarResultado(msg, ok) {
+      const el = document.getElementById('resultado');
+      el.textContent = msg;
+      el.className = ok ? 'ok' : 'error';
+      el.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

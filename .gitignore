@@ -2,8 +2,6 @@
 *.xlsx
 *.xls
 
-# ── Scripts de parseo — solo locales ──
-parsers/
 
 # ── Python ──
 __pycache__/

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Peralta — Rodamientos</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/static/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -27,6 +27,13 @@
       <button class="tab"        data-page="mapa">Mapa Estado</button>
       <button class="tab"        data-page="turbina">Por Turbina</button>
     </nav>
+
+    <div class="nav-actions">
+      {% if role == 'admin' %}
+      <a href="/admin" class="nav-admin-btn">Actualizar datos</a>
+      {% endif %}
+      <a href="/logout" class="nav-logout">Salir</a>
+    </div>
   </nav>
 
   <!-- ── Pages ──────────────────────────────────────────────────────────── -->
@@ -50,6 +57,6 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="/static/app.js"></script>
 </body>
 </html>

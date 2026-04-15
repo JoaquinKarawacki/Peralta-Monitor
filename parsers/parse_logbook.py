@@ -22,8 +22,9 @@ import pandas as pd
 from datetime import datetime
 
 # ── Rutas ──────────────────────────────────────────────────────────────────────
-DEFAULT_INPUT  = "../ROTORsoft_Logbook.xlsx"
-WARNINGS_JSON  = "data/warnings.json"
+BASE_DIR       = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEFAULT_INPUT  = os.path.join(BASE_DIR, "ROTORsoft_Logbook.xlsx")
+WARNINGS_JSON  = os.path.join(BASE_DIR, "data", "warnings.json")
 
 # ── Códigos relevantes para rodamientos ───────────────────────────────────────
 CODIGOS_INCLUIDOS = {

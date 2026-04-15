@@ -131,6 +131,44 @@ nav {
 .tab:hover  { color: var(--t2); }
 .tab.active { color: var(--ac); border-bottom-color: var(--ac); }
 
+.nav-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.nav-admin-btn {
+  font-family: var(--font-mono);
+  font-size: .55rem;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--ac);
+  text-decoration: none;
+  border: 1px solid var(--ac);
+  border-radius: 4px;
+  padding: 3px 10px;
+  transition: background .15s, color .15s;
+}
+
+.nav-admin-btn:hover {
+  background: var(--ac);
+  color: #07101a;
+}
+
+.nav-logout {
+  font-family: var(--font-mono);
+  font-size: .55rem;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--t3);
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.nav-logout:hover { color: var(--t2); }
+
 /* ── Pages ──────────────────────────────────────────────────────────────── */
 main {
   max-width: 1400px;
