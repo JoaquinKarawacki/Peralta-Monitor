@@ -18,8 +18,7 @@ from datetime import datetime
 import openpyxl
 
 # ── Rutas ──────────────────────────────────────────────────────────────────────
-BASE_DIR   = os.path.dirname(os.path.dirname(os.path.
-                                             abspath(__file__)))
+BASE_DIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INPUT_FILE = os.path.join(BASE_DIR, "Peralta_I_Actualizacion_Rodamientos.xlsx")
 OUTPUT_DIR = os.path.join(BASE_DIR, "data")
 

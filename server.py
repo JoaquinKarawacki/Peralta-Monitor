@@ -25,13 +25,13 @@ app = Flask(__name__)
 
 # SECRET_KEY: firma las cookies de sesión. En Railway se define como variable
 # de entorno. El valor por defecto solo sirve para desarrollo local.
-app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-cambiar-en-produccion')
+app.secret_key = os.environ.get('SECRET_KEY', 'aqwertyuiopasdfghjlzxcvbnmm')
 
 # Credenciales — se definen como variables de entorno en Railway
 ADMIN_USER   = os.environ.get('ADMIN_USER',   'admin')
 ADMIN_PASS   = os.environ.get('ADMIN_PASS',   'admin123')
-CLIENT_USER  = os.environ.get('CLIENT_USER',  'cliente')
-CLIENT_PASS  = os.environ.get('CLIENT_PASS',  'cliente123')
+CLIENT_USER  = os.environ.get('CLIENT_USER',  'peralta')
+CLIENT_PASS  = os.environ.get('CLIENT_PASS',  'peralta123')
 
 # Ruta raíz del proyecto (donde vive server.py)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -39,10 +39,7 @@ DATA_DIR = os.path.join(BASE_DIR, 'data')
 SEED_DIR = os.path.join(BASE_DIR, 'data_seed')
 
 def init_data():
-    """
-    Si el Volume está vacío (primer arranque), copia los JSON semilla
-    para que el dashboard no quede en blanco.
-    """
+    
     os.makedirs(DATA_DIR, exist_ok=True)
     seed_files = ['estado_actual.json', 'warnings.json', 'historico_rodamientos.json']
     for fname in seed_files:
