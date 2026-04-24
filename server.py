@@ -85,10 +85,6 @@ def login():
             session['user'] = user
             session['role'] = 'admin'
             return redirect(url_for('index'))
-        elif user == CLIENT_USER and pwd == CLIENT_PASS:
-            session['user'] = user
-            session['role'] = 'client'
-            return redirect(url_for('index'))
         else:
             error = 'Usuario o contraseña incorrectos'
 
