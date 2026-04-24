@@ -105,7 +105,14 @@ def logout():
 @app.route('/')
 @login_required
 def index():
+    if session.get('role') == 'admin':
+        return redirect(url_for('admin'))
     return render_template('index.html', role=session.get('role'))
+
+@app.route('/dashboard')
+@admin_required
+def dashboard():
+    return render_template('index.html', role='admin')
 
 # ── Panel de admin ─────────────────────────────────────────────────────────────
 
