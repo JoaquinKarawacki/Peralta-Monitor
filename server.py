@@ -171,6 +171,110 @@ def upload():
         'errors':  errors
     })
 
+# ── Descarga de HTML auto-contenido ───────────────────────────────────────────
+
+@app.route('/download-html')
+@admin_required
+def download_html():
+    """Genera el dashboard como un HTML auto-contenido para compartir con el cliente."""
+    import json as _json
+
+    with open(os.path.join(BASE_DIR, 'static', 'style.css'), encoding='utf-8') as f:
+        css = f.read()
+    with open(os.path.join(BASE_DIR, 'static', 'app.js'), encoding='utf-8') as f:
+        js = f.read()
+
+    def read_json(name):
+        path = os.path.join(DATA_DIR, name)
+        if os.path.exists(path):
+            with open(path, encoding='utf-8') as f:
+                return _json.load(f)
+        return {}
+
+    estado_data    = read_json('estado_actual.json')
+    warnings_data  = read_json('warnings.json')
+    historico_data = read_json('historico_rodamientos.json')
+
+    generated = datetime.now().strftime('%d/%m/%Y %H:%Mhs')
+    filename  = f"Peralta_I_Rodamientos_{datetime.now().strftime('%Y%m%d')}.html"
+
+    html_content = f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peralta I — Rodamientos</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+{css}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="logo-spin" style="transform-origin:50% 50%">
+        <line x1="9" y1="9" x2="9"    y2="2"    stroke="#4da6ff" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="9" y1="9" x2="15.5" y2="13"   stroke="#4da6ff" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="9" y1="9" x2="2.5"  y2="13"   stroke="#4da6ff" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="9" cy="9" r="2" fill="#4da6ff"/>
+        <circle cx="9" cy="9" r="1" fill="#07101a"/>
+      </svg>
+      <span class="nav-brand">Peralta I &mdash; Rodamientos</span>
+    </div>
+
+    <nav class="nav-tabs">
+      <button class="tab active" data-page="resumen">Resumen</button>
+      <button class="tab"        data-page="mapa">Mapa Estado</button>
+      <button class="tab"        data-page="turbina">Por Turbina</button>
+    </nav>
+
+    <div class="nav-actions">
+      <span style="font-family:var(--font-mono);font-size:.5rem;color:var(--t3)">Generado: {generated}</span>
+    </div>
+  </nav>
+
+  <main>
+    <div id="page-resumen"  class="page active"></div>
+    <div id="page-mapa"     class="page"></div>
+    <div id="page-turbina"  class="page"></div>
+  </main>
+
+  <div id="loading">
+    <div class="loading-inner">
+      <svg width="24" height="24" viewBox="0 0 18 18" fill="none" class="logo-spin">
+        <line x1="9" y1="9" x2="9"    y2="2"    stroke="#4da6ff" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="9" y1="9" x2="15.5" y2="13"   stroke="#4da6ff" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="9" y1="9" x2="2.5"  y2="13"   stroke="#4da6ff" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="9" cy="9" r="2" fill="#4da6ff"/>
+        <circle cx="9" cy="9" r="1" fill="#07101a"/>
+      </svg>
+      <span>Cargando datos...</span>
+    </div>
+  </div>
+
+  <script>
+    window.__STATIC_DATA__ = {{
+      estado:    {_json.dumps(estado_data,    ensure_ascii=False)},
+      warnings:  {_json.dumps(warnings_data,  ensure_ascii=False)},
+      historico: {_json.dumps(historico_data, ensure_ascii=False)}
+    }};
+  </script>
+
+  <script>
+{js}
+  </script>
+
+</body>
+</html>"""
+
+    from flask import Response
+    return Response(
+        html_content,
+        mimetype='text/html',
+        headers={'Content-Disposition': f'attachment; filename="{filename}"'}
+    )
+
 # ── JSON de datos (fetch desde app.js) ────────────────────────────────────────
 
 @app.route('/data/<filename>')

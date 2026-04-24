@@ -131,6 +131,12 @@ function derivarMeses() {
 
 async function loadData() {
   try {
+    if (window.__STATIC_DATA__) {
+      ({ estado, warnings, historico } = window.__STATIC_DATA__);
+      derivarMeses();
+      return;
+    }
+
     const [resEstado, resWarnings, resHistorico] = await Promise.all([
       fetch('data/estado_actual.json'),
       fetch('data/warnings.json'),
@@ -145,7 +151,6 @@ async function loadData() {
     warnings  = await resWarnings.json();
     historico = await resHistorico.json();
 
-    // Derivar meses dinámicamente del JSON (no hardcodeados)
     derivarMeses();
 
   } catch (err) {

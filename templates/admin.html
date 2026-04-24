@@ -198,6 +198,24 @@
       <p class="last-update">Último update: {{ last_update }}</p>
       {% endif %}
     </div>
+
+    <div class="card" id="card-descarga">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <div>
+          <div style="font-size:14px;font-weight:600;color:#e0eaf4;margin-bottom:4px">Descargar dashboard</div>
+          <div style="font-size:12px;color:#7a9ab8">Genera un HTML auto-contenido con los datos actuales para compartir con el cliente.</div>
+        </div>
+        <a href="/download-html" id="btn-descargar"
+           style="display:inline-block;background:#1a3050;color:#4da6ff;border:1px solid #4da6ff33;
+                  border-radius:6px;padding:10px 18px;font-family:'DM Mono',monospace;font-size:13px;
+                  font-weight:500;text-decoration:none;white-space:nowrap;transition:background .2s"
+           onmouseover="this.style.background='#1e3a60'"
+           onmouseout="this.style.background='#1a3050'">
+          Descargar HTML
+        </a>
+      </div>
+    </div>
+
   </div>
 
   <script>
