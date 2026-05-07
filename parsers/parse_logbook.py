@@ -225,13 +225,13 @@ def main():
 
     print(f"{'─'*57}")
 
-    # Confirmación
-    n_aplicar = len(cambios) + (len(conflictos) if args.forzar else 0)
-    resp = input(f"\n  ¿Aplicar {n_aplicar} cambios en warnings.json? (s/n): ").strip().lower()
-
-    if resp != 's':
-        print("\n  Cancelado. No se modificó nada.")
-        sys.exit(0)
+    # Confirmación — se omite cuando no hay terminal (ej: llamado desde servidor)
+    if sys.stdin.isatty():
+        n_aplicar = len(cambios) + (len(conflictos) if args.forzar else 0)
+        resp = input(f"\n  ¿Aplicar {n_aplicar} cambios en warnings.json? (s/n): ").strip().lower()
+        if resp != 's':
+            print("\n  Cancelado. No se modificó nada.")
+            sys.exit(0)
 
     # Si no se fuerza, quitar conflictos del dict a fusionar
     if not args.forzar:
