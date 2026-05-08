@@ -14,6 +14,7 @@ REQUISITOS:
 
 import json
 import os
+import sys
 from datetime import datetime
 import openpyxl
 
@@ -274,7 +275,7 @@ def main():
     if not os.path.exists(INPUT_FILE):
         print(f"ERROR: No se encontró '{INPUT_FILE}'")
         print("Asegurate de correr este script desde la carpeta del proyecto.")
-        return
+        sys.exit(1)
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 

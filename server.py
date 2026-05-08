@@ -137,41 +137,55 @@ def upload():
 
     updated = []
     errors  = []
+    details = []
 
     # ── Procesar Peralta I Actualización ──
     if monitoreo_file and monitoreo_file.filename:
-        # Guardamos siempre con el mismo nombre, sin importar el original
         dest = os.path.join(BASE_DIR, 'Peralta_I_Actualizacion_Rodamientos.xlsx')
         monitoreo_file.save(dest)
 
         result = subprocess.run(
             [sys.executable, os.path.join(BASE_DIR, 'parsers', 'parse_actualizacion.py')],
-            capture_output=True, text=True
+            capture_output=True, text=True, encoding='utf-8'
         )
+        out = (result.stdout or '').strip()
+        err = (result.stderr or '').strip()
         if result.returncode == 0:
             updated.append('Peralta I Actualización')
+            if out:
+                details.append(f'[Actualización]\n{out}')
         else:
-            errors.append(f'Error en Actualización: {result.stderr.strip()}')
+            msg = err or out or '(sin output)'
+            errors.append(f'Error en Actualización: {msg}')
+            if out:
+                details.append(f'[Actualización stdout]\n{out}')
 
     # ── Procesar Logbook ROTORsoft ──
     if logbook_file and logbook_file.filename:
-        # Guardamos siempre con el mismo nombre, sin importar el original
         dest = os.path.join(BASE_DIR, 'ROTORsoft_Logbook.xlsx')
         logbook_file.save(dest)
 
         result = subprocess.run(
             [sys.executable, os.path.join(BASE_DIR, 'parsers', 'parse_logbook.py')],
-            capture_output=True, text=True
+            capture_output=True, text=True, encoding='utf-8'
         )
+        out = (result.stdout or '').strip()
+        err = (result.stderr or '').strip()
         if result.returncode == 0:
             updated.append('Logbook ROTORsoft')
+            if out:
+                details.append(f'[Logbook]\n{out}')
         else:
-            errors.append(f'Error en Logbook: {result.stderr.strip()}')
+            msg = err or out or '(sin output)'
+            errors.append(f'Error en Logbook: {msg}')
+            if out:
+                details.append(f'[Logbook stdout]\n{out}')
 
     return jsonify({
         'success': len(errors) == 0 and len(updated) > 0,
         'updated': updated,
-        'errors':  errors
+        'errors':  errors,
+        'details': details,
     })
 
 # ── Descarga de HTML auto-contenido ───────────────────────────────────────────
@@ -277,8 +291,8 @@ def download_html():
 
     from flask import Response
     return Response(
-        html_content,
-        mimetype='text/html',
+        html_content.encode('utf-8'),
+        content_type='text/html; charset=utf-8',
         headers={'Content-Disposition': f'attachment; filename="{filename}"'}
     )
 

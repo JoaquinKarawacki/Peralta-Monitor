@@ -135,6 +135,22 @@
       color: #ff4d4d;
     }
 
+    #detalles {
+      display: none;
+      margin-top: 10px;
+      background: #07101a;
+      border: 1px solid #1a3050;
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #7a9ab8;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
     .spinner {
       display: none;
       text-align: center;
@@ -192,6 +208,7 @@
       <div class="spinner" id="spinner">Procesando archivos...</div>
 
       <div id="resultado"></div>
+      <pre id="detalles"></pre>
 
       {% if last_update %}
       <p class="last-update">Último update: {{ last_update }}</p>
@@ -248,6 +265,7 @@
       btn.disabled = true;
       spinner.style.display = 'block';
       document.getElementById('resultado').style.display = 'none';
+      document.getElementById('detalles').style.display = 'none';
 
       const formData = new FormData();
       if (monitoreo) formData.append('monitoreo', monitoreo);
@@ -261,6 +279,11 @@
           mostrarResultado('✓ Datos actualizados: ' + data.updated.join(', '), true);
         } else {
           mostrarResultado('Error:\n' + data.errors.join('\n'), false);
+        }
+        if (data.details && data.details.length) {
+          const det = document.getElementById('detalles');
+          det.textContent = data.details.join('\n\n');
+          det.style.display = 'block';
         }
       } catch (err) {
         mostrarResultado('Error de conexión: ' + err.message, false);
