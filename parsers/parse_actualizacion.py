@@ -330,6 +330,58 @@ def main():
         json.dump(warnings, f, ensure_ascii=False, indent=2)
     print(f"  ✓ {out_warnings}  ({len(warnings)} turbinas)")
 
+    # Actualizar historico_rodamientos.json
+    historico_path = os.path.join(OUTPUT_DIR, "historico_rodamientos.json")
+    if os.path.exists(historico_path):
+        with open(historico_path, 'r', encoding='utf-8') as f:
+            historico = json.load(f)
+
+        n_medidas      = 0
+        n_inspecciones = 0
+
+        for turbina, datos in estado.items():
+            if turbina not in historico:
+                continue
+
+            hist = historico[turbina]
+
+            # Actualizar campos de cambio de rodamiento
+            for field in ("cambio_frontal", "cambio_trasero"):
+                if datos.get(field) and hist.get(field) != datos[field]:
+                    hist[field] = datos[field]
+
+            # Actualizar inspección Joao Alvez
+            if datos.get("insp_joao_fecha"):
+                nueva_insp = {
+                    "realizada": True,
+                    "fecha": datos["insp_joao_fecha"],
+                    "comentario": datos.get("insp_joao_comentario"),
+                }
+                if hist.get("insp_joao") != nueva_insp:
+                    hist["insp_joao"] = nueva_insp
+                    n_inspecciones += 1
+
+            # Agregar nueva medida al historial si no existe
+            nueva_fecha = datos.get("nueva_fecha")
+            if nueva_fecha:
+                fechas_existentes = {m["fecha"] for m in hist.get("medidas", [])}
+                if nueva_fecha not in fechas_existentes:
+                    hist.setdefault("medidas", []).append({
+                        "fecha":    nueva_fecha,
+                        "tipo":     datos.get("nuevo_tipo"),
+                        "cat_del":  datos.get("nueva_cat_del"),
+                        "cat_tras": datos.get("nueva_cat_tras"),
+                    })
+                    hist["medidas"].sort(key=lambda m: m.get("fecha") or "")
+                    n_medidas += 1
+
+        if n_medidas or n_inspecciones:
+            with open(historico_path, 'w', encoding='utf-8') as f:
+                json.dump(historico, f, ensure_ascii=False, indent=2)
+            print(f"  ✓ {historico_path}  ({n_medidas} medidas nuevas, {n_inspecciones} inspecciones actualizadas)")
+        else:
+            print(f"  → {historico_path}  (sin cambios)")
+
     wb.close()
     print("\nListo. Los JSON están en la carpeta 'data/'.")
 
