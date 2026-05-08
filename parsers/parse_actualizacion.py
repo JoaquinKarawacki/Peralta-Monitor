@@ -103,6 +103,17 @@ def parsear_estado(ws):
             "comentarios_nuevos":  limpiar(row[15]),
         }
 
+        # Promover nueva medida a estado confirmado cuando está presente
+        nuevo_tipo = limpiar(row[12])
+        if nueva_cat_del:
+            resultado[wec]["cat_del"] = nueva_cat_del
+        if nueva_cat_tras:
+            resultado[wec]["cat_tras"] = nueva_cat_tras
+        if nueva_fecha:
+            resultado[wec]["fecha_ultima"] = nueva_fecha
+            if nuevo_tipo:
+                resultado[wec]["tipo_ultima"] = nuevo_tipo
+
     return resultado
 
 
@@ -182,6 +193,15 @@ def aplicar_nuevo_control(estado, nuevo_control):
         if turbina not in estado:
             continue
         estado[turbina].update(datos_nuevos)
+        # Promover a estado confirmado
+        if datos_nuevos.get("nueva_cat_del"):
+            estado[turbina]["cat_del"] = datos_nuevos["nueva_cat_del"]
+        if datos_nuevos.get("nueva_cat_tras"):
+            estado[turbina]["cat_tras"] = datos_nuevos["nueva_cat_tras"]
+        if datos_nuevos.get("nueva_fecha"):
+            estado[turbina]["fecha_ultima"] = datos_nuevos["nueva_fecha"]
+            if datos_nuevos.get("nuevo_tipo"):
+                estado[turbina]["tipo_ultima"] = datos_nuevos["nuevo_tipo"]
 
     return estado
 

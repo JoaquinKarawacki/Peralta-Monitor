@@ -190,6 +190,18 @@ def upload():
 
 # ── Descarga de HTML auto-contenido ───────────────────────────────────────────
 
+def _ascii_js(text):
+    """Escapa caracteres no-ASCII en código JS a \\uXXXX para que sea encoding-agnostic."""
+    out = []
+    for ch in text:
+        cp = ord(ch)
+        if cp > 127:
+            out.append(f'\\u{cp:04x}')
+        else:
+            out.append(ch)
+    return ''.join(out)
+
+
 @app.route('/download-html')
 @admin_required
 def download_html():
@@ -199,7 +211,7 @@ def download_html():
     with open(os.path.join(BASE_DIR, 'static', 'style.css'), encoding='utf-8') as f:
         css = f.read()
     with open(os.path.join(BASE_DIR, 'static', 'app.js'), encoding='utf-8') as f:
-        js = f.read()
+        js = _ascii_js(f.read())
 
     def read_json(name):
         path = os.path.join(DATA_DIR, name)
