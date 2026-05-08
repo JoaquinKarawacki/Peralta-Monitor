@@ -201,12 +201,16 @@ def download_html():
     generated = datetime.now().strftime('%d/%m/%Y %H:%Mhs')
     filename  = f"Peralta_I_Rodamientos_{datetime.now().strftime('%Y%m%d')}.html"
 
+    estado_js    = _json.dumps(estado_data)
+    warnings_js  = _json.dumps(warnings_data)
+    historico_js = _json.dumps(historico_data)
+
     html_content = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Peralta I — Rodamientos</title>
+  <title>Peralta I &#8212; Rodamientos</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
 {css}
@@ -258,9 +262,9 @@ def download_html():
 
   <script>
     window.__STATIC_DATA__ = {{
-      estado:    {_json.dumps(estado_data,    ensure_ascii=False)},
-      warnings:  {_json.dumps(warnings_data,  ensure_ascii=False)},
-      historico: {_json.dumps(historico_data, ensure_ascii=False)}
+      estado:    {estado_js},
+      warnings:  {warnings_js},
+      historico: {historico_js}
     }};
   </script>
 
