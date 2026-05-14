@@ -814,7 +814,7 @@ function buildTimeline(id) {
 
   // Inspección Joao
   if (hist.insp_joao?.fecha) {
-    eventos.push({ fecha: hist.insp_joao.fecha, tipo: 'Insp. Joao Alvez', cat_del: null, cat_tras: hist.insp_joao.comentario ? 'ver' : null });
+    eventos.push({ fecha: hist.insp_joao.fecha, tipo: 'Insp. Joao Alvez', cat_del: null, cat_tras: hist.insp_joao.clase || est.insp_joao_clase || null });
   }
 
   // Ordenar por fecha
@@ -833,7 +833,7 @@ function buildTimeline(id) {
     const esTrasero  = ev.tipo.includes('Trasero') && ev.tipo.includes('Cambio');
     const esJoao     = ev.tipo.includes('Joao');
     const color      = esTrasero ? '#e060b0' : esFrontal ? '#6aabf7' : esJoao ? '#e8d44d' : '#00d090';
-    const tipoCorto  = ev.tipo.replace('Mantenimiento ', '').replace('Joao Alvez', 'Insp.');
+    const tipoCorto  = ev.tipo.replace('Mantenimiento ', '').replace('Insp. Joao Alvez', 'Insp. Joao');
 
     html += `<tr>
       <td style="font-size:.5rem;color:var(--t2)">${ev.fecha || ''}</td>
